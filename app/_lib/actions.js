@@ -1,5 +1,6 @@
 "use server";
 
+import { revalidatePath } from "next/cache";
 import { auth, signIn, signOut } from "./auth";
 import { supabase } from "./supabase";
 
@@ -19,6 +20,8 @@ export async function updateGuest(formData) {
     .from("guests")
     .update(updateData)
     .eq("id", session.user.guestId);
+
+  revalidatePath("/account/profile");
 
   if (error) {
     throw new Error("Guest could not be updated.");

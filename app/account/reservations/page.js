@@ -8,20 +8,22 @@ export default async function Page() {
   const bookings = await getBookings(session.user.guestId);
 
   return (
-    <div>
-      <h2 className="font-semibold text-2xl text-accent-400 mb-7">
+    <>
+      <h2 className="font-semibold text-2xl text-accent-400 mb-7 ">
         Your reservations
       </h2>
-      {bookings.length === 0 ? (
-        <p className="text-lg">
-          You have no reservations yet. Check out our{" "}
-          <a className="underline text-accent-500" href="/cabins">
-            luxury cabins &rarr;
-          </a>
-        </p>
-      ) : (
-        <ReservationList bookings={bookings} />
-      )}
-    </div>
+      <div className="overflow-auto max-h-[70vh] pr-2 scrollbar-thin scrollbar-thumb-primary-700 scrollbar-track-primary-950">
+        {bookings.length === 0 ? (
+          <p className="text-lg">
+            You have no reservations yet. Check out our{" "}
+            <a className="underline text-accent-500" href="/cabins">
+              luxury cabins &rarr;
+            </a>
+          </p>
+        ) : (
+          <ReservationList bookings={bookings} />
+        )}
+      </div>
+    </>
   );
 }

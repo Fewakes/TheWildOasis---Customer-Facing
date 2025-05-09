@@ -10,12 +10,10 @@ export default async function Page() {
 
   return (
     <div className="space-y-8">
-      {/* Welcome Message */}
       <h2 className="font-semibold text-2xl text-accent-400 mb-7">
         Welcome, {firstName}
       </h2>
 
-      {/* Info Panel */}
       <div className="text-primary-200">
         <p className="text-lg">
           Welcome to your guest dashboard, {firstName}. From here you can manage
@@ -24,14 +22,12 @@ export default async function Page() {
         </p>
       </div>
 
-      {/* Testimonials Section */}
       <div className="bg-primary-800 text-primary-100 p-6 rounded-xl shadow mt-12">
         <h3 className="text-2xl font-semibold mb-4">
           What Our Guests Are Saying
         </h3>
 
         <div className="space-y-6">
-          {/* Testimonial 1 */}
           <div className="space-y-2">
             <p className="italic">
               "An unforgettable experience! The cabin was cozy, the staff was
@@ -40,7 +36,6 @@ export default async function Page() {
             <p className="font-semibold">- Jane D.</p>
           </div>
 
-          {/* Testimonial 2 */}
           <div className="space-y-2">
             <p className="italic">
               "A perfect getaway! Everything was just as promised, and the
@@ -49,7 +44,6 @@ export default async function Page() {
             <p className="font-semibold">- John S.</p>
           </div>
 
-          {/* Testimonial 3 */}
           <div className="space-y-2">
             <p className="italic">
               "The best vacation I've had in years! The cabin was spotless, the
